@@ -1,13 +1,16 @@
+'use client';
+
 import PageWrapper from '@/components/PageWrapper';
+import { Camera, Music, BookOpen, Palette, PenTool, Radio, Coffee } from 'lucide-react';
 import styles from './Hobbies.module.css';
 
 const hobbies = [
-    { id: 1, label: 'Travelling', tag: 'Adventure', size: 'itemLarge' },
-    { id: 2, label: 'Football Fanatic', tag: 'Sports', size: 'itemTall' },
-    { id: 3, label: 'Reading', tag: 'Leisure', size: '' },
-    { id: 4, label: 'Painting', tag: 'Art', size: '' },
-    { id: 5, label: 'Sketching', tag: 'Art', size: 'itemWide' },
-    { id: 6, label: 'Tech Podcasts', tag: 'Learning', size: '' },
+    { id: 1, label: 'Travelling', tag: 'Adventure', size: 'itemLarge', icon: Camera },
+    { id: 2, label: 'Football Fanatic', tag: 'Sports', size: 'itemTall', icon: Radio }, // Used Radio as proxy for stadium/broadcast or choose simpler
+    { id: 3, label: 'Reading', tag: 'Leisure', size: '', icon: BookOpen },
+    { id: 4, label: 'Painting', tag: 'Art', size: '', icon: Palette },
+    { id: 5, label: 'Sketching', tag: 'Art', size: 'itemWide', icon: PenTool },
+    { id: 6, label: 'Tech Podcasts', tag: 'Learning', size: '', icon: Radio },
 ];
 
 export default function Hobbies() {
@@ -21,14 +24,20 @@ export default function Hobbies() {
             </p>
 
             <div className={styles.grid}>
-                {hobbies.map((hobby) => (
-                    <div key={hobby.id} className={`${styles.item} ${hobby.size ? styles[hobby.size as keyof typeof styles] : ''}`}>
-                        <div className={styles.content}>
-                            <span className={styles.tag}>{hobby.tag}</span>
-                            <h3 className={styles.label}>{hobby.label}</h3>
+                {hobbies.map((hobby) => {
+                    const Icon = hobby.icon;
+                    return (
+                        <div key={hobby.id} className={`${styles.item} ${hobby.size ? styles[hobby.size as keyof typeof styles] : ''}`}>
+                            <div className={styles.content}>
+                                <div className={styles.iconWrapper}>
+                                    <Icon size={28} strokeWidth={1.5} />
+                                </div>
+                                <span className={styles.tag}>{hobby.tag}</span>
+                                <h3 className={styles.label}>{hobby.label}</h3>
+                            </div>
                         </div>
-                    </div>
-                ))}
+                    );
+                })}
             </div>
         </PageWrapper>
     );

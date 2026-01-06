@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { Briefcase, Code2, GraduationCap } from 'lucide-react';
 import styles from './About.module.css';
 
 export default function About() {
@@ -26,7 +27,9 @@ export default function About() {
 
                 <div className={styles.gridSection}>
                     <div className={styles.column}>
-                        <h3 className={styles.subheading}>Experience</h3>
+                        <h3 className={styles.subheading}>
+                            <Briefcase size={24} className={styles.icon} /> Experience
+                        </h3>
                         <div className={styles.experienceItem}>
                             <div className={styles.roleHeader}>
                                 <h4>AI Engineer</h4>
@@ -46,7 +49,9 @@ export default function About() {
                     </div>
 
                     <div className={styles.column}>
-                        <h3 className={styles.subheading}>Skills</h3>
+                        <h3 className={styles.subheading}>
+                            <Code2 size={24} className={styles.icon} /> Skills
+                        </h3>
                         <div className={styles.skillsGrid}>
                             <span className={styles.skillTag}>Generative AI</span>
                             <span className={styles.skillTag}>Agentic AI</span>
@@ -58,7 +63,9 @@ export default function About() {
                             <span className={styles.skillTag}>Scaling Architectures</span>
                         </div>
 
-                        <h3 className={styles.subheading} style={{ marginTop: '2rem' }}>Education</h3>
+                        <h3 className={styles.subheading} style={{ marginTop: '2rem' }}>
+                            <GraduationCap size={24} className={styles.icon} /> Education
+                        </h3>
                         <div className={styles.experienceItem}>
                             <div className={styles.roleHeader}>
                                 <h4>B.Tech in Computer Science</h4>

@@ -40,6 +40,17 @@
     width: 100%;
     padding: 1.5rem;
     background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+}
+
+.iconWrapper {
+    margin-bottom: auto;
+    padding-top: 1rem;
+    color: var(--accent-secondary);
+    opacity: 0.8;
 }
 
 .label {

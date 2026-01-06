@@ -9,12 +9,13 @@ interface ProjectCardProps {
     category: string;
     description: string;
     image?: string;
+    icon?: React.ElementType;
 }
 
 const ROTATION_RANGE = 32.5;
 const HALF_ROTATION_RANGE = 32.5 / 2;
 
-export default function ProjectCard({ title, category, description }: ProjectCardProps) {
+export default function ProjectCard({ title, category, description, icon: Icon }: ProjectCardProps) {
     const ref = useRef<HTMLDivElement>(null);
 
     const x = useMotionValue(0);
@@ -66,7 +67,10 @@ export default function ProjectCard({ title, category, description }: ProjectCar
                 }}
                 className={styles.cardContent}
             >
-                <div className={styles.category}>{category}</div>
+                <div className={styles.categoryRow}>
+                    {Icon && <Icon size={20} style={{ color: 'var(--accent-primary)' }} />}
+                    <div className={styles.category}>{category}</div>
+                </div>
                 <h3 className={styles.title}>{title}</h3>
                 <p className={styles.description}>{description}</p>
 

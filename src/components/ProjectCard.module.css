@@ -24,13 +24,19 @@
     box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
 }
 
+.categoryRow {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+}
+
 .category {
     font-family: var(--font-body);
     color: var(--accent-secondary);
     font-size: 0.875rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    margin-bottom: 0.5rem;
     font-weight: 600;
 }
 

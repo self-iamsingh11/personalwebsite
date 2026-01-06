@@ -1,11 +1,13 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import GlowingOrb from '@/components/GlowingOrb';
 import styles from './Hero.module.css';
 
 export default function Hero() {
     return (
         <section className={styles.hero}>
+            <GlowingOrb />
             <div className={styles.content}>
                 <motion.h1
                     className={styles.title}
