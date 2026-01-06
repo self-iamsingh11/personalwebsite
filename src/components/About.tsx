@@ -17,12 +17,57 @@ export default function About() {
                     About <span className="text-gradient">Me</span>
                 </h2>
                 <p className={styles.text}>
-                    I'm a passionate developer with a keen eye for design. I craft digital experiences that are not only functional but also visually stunning.
-                    With a background in engineering and a love for aesthetics, I bridge the gap between technical complexity and intuitive design.
+                    AI Engineer with 7+ years of experience specializing in Generative AI, Python, and scaling architectures.
+                    Proven ability to translate business requirements into secure, high-performance technical solutions in collaborative environments.
+                    Expert in building end-to-end GenAI solutions, intelligent automation, and robust AI governance frameworks.
                 </p>
-                <p className={styles.text}>
-                    When I'm not coding, you can find me exploring new technologies, contributing to open source, or capturing moments through my camera lens.
-                </p>
+
+                <div className={styles.sectionDivider} />
+
+                <div className={styles.gridSection}>
+                    <div className={styles.column}>
+                        <h3 className={styles.subheading}>Experience</h3>
+                        <div className={styles.experienceItem}>
+                            <div className={styles.roleHeader}>
+                                <h4>AI Engineer</h4>
+                                <span className={styles.period}>2024 - Present</span>
+                            </div>
+                            <span className={styles.company}>IBM (WatsonX)</span>
+                            <p className={styles.experienceDesc}>Building and deploying end-to-end generative AI solutions for enterprise challenges. Focus spans intelligent automation, customer support chatbots, and robust AI governance frameworks.</p>
+                        </div>
+                        <div className={styles.experienceItem}>
+                            <div className={styles.roleHeader}>
+                                <h4>AI/ML Engineer</h4>
+                                <span className={styles.period}>2017 - 2024</span>
+                            </div>
+                            <span className={styles.company}>Dell Technologies</span>
+                            <p className={styles.experienceDesc}>Architected enterprise-grade solutions with ML/AI, focusing on 'no-touch' workflows and model governance. Delivered intelligent systems enhancing efficiency and compliance.</p>
+                        </div>
+                    </div>
+
+                    <div className={styles.column}>
+                        <h3 className={styles.subheading}>Skills</h3>
+                        <div className={styles.skillsGrid}>
+                            <span className={styles.skillTag}>Generative AI</span>
+                            <span className={styles.skillTag}>Agentic AI</span>
+                            <span className={styles.skillTag}>Llama 2 (80B/405B)</span>
+                            <span className={styles.skillTag}>Python</span>
+                            <span className={styles.skillTag}>Vector DB</span>
+                            <span className={styles.skillTag}>AI Governance</span>
+                            <span className={styles.skillTag}>Deep Learning</span>
+                            <span className={styles.skillTag}>Scaling Architectures</span>
+                        </div>
+
+                        <h3 className={styles.subheading} style={{ marginTop: '2rem' }}>Education</h3>
+                        <div className={styles.experienceItem}>
+                            <div className={styles.roleHeader}>
+                                <h4>B.Tech in Computer Science</h4>
+                                <span className={styles.period}>2013 - 2017</span>
+                            </div>
+                            <span className={styles.company}>University of Petroleum and Energy Studies</span>
+                        </div>
+                    </div>
+                </div>
             </motion.div>
         </section>
     );
