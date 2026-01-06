@@ -1,0 +1,75 @@
+.navContainer {
+    position: fixed;
+    top: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    padding: 0.5rem 0.5rem;
+    background: rgba(10, 10, 10, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 9999px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.navList {
+    display: flex;
+    list-style: none;
+    gap: 0.5rem;
+    padding: 0;
+    margin: 0;
+}
+
+.navItem {
+    position: relative;
+}
+
+.navLink {
+    position: relative;
+    display: block;
+    padding: 0.75rem 1.5rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.2s ease;
+    border-radius: 9999px;
+}
+
+.navLink:hover {
+    color: var(--text-primary);
+}
+
+.activeBackground {
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 9999px;
+    z-index: -1;
+}
+
+.linkText {
+    position: relative;
+    z-index: 1;
+}
+
+@media (max-width: 640px) {
+    .navContainer {
+        bottom: 2rem;
+        top: auto;
+        width: 90%;
+        justify-content: center;
+        background: rgba(10, 10, 10, 0.85);
+    }
+
+    .navList {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .navLink {
+        padding: 0.75rem 0.5rem;
+        font-size: 0.8rem;
+    }
+}

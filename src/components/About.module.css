@@ -1,0 +1,39 @@
+.container {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.content {
+    max-width: 800px;
+    text-align: center;
+}
+
+.heading {
+    font-family: var(--font-display);
+    font-size: 4rem;
+    margin-bottom: 3rem;
+    line-height: 1.1;
+}
+
+.text {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    font-weight: 300;
+}
+
+@media (max-width: 768px) {
+    .heading {
+        font-size: 3rem;
+    }
+
+    .text {
+        font-size: 1.1rem;
+    }
+}
