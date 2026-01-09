@@ -1,0 +1,32 @@
+.container {
+    width: 100%;
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 4rem var(--container-padding);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--grid-gap);
+    grid-auto-rows: minmax(200px, auto);
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .container {
+        padding: 2rem var(--container-padding);
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+        gap: var(--grid-gap);
+    }
+}

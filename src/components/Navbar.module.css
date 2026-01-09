@@ -5,12 +5,12 @@
     transform: translateX(-50%);
     z-index: 100;
     padding: 0.5rem 0.5rem;
-    background: rgba(10, 10, 10, 0.6);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 9999px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    background: var(--bg-glass);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-full);
+    box-shadow: var(--shadow-card);
 }
 
 .navList {
@@ -35,8 +35,8 @@
     text-decoration: none;
     font-size: 0.9rem;
     font-weight: 500;
-    transition: color 0.2s ease;
-    border-radius: 9999px;
+    transition: color var(--duration-normal) var(--easing-smooth);
+    border-radius: var(--radius-full);
 }
 
 .navLink:hover {
@@ -46,9 +46,10 @@
 .activeBackground {
     position: absolute;
     inset: 0;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 9999px;
+    background: var(--bg-card-hover);
+    border-radius: var(--radius-full);
     z-index: -1;
+    box-shadow: 0 0 20px var(--accent-glow);
 }
 
 .linkText {
@@ -62,6 +63,17 @@
     justify-content: center;
     position: relative;
     z-index: 1;
+    transition: transform var(--duration-fast) var(--easing-smooth);
+}
+
+.navLink:hover .iconWrapper {
+    transform: scale(1.1);
+}
+
+/* Focus state for accessibility */
+.navLink:focus-visible {
+    outline: 2px solid var(--accent-primary);
+    outline-offset: 2px;
 }
 
 @media (max-width: 640px) {
@@ -69,8 +81,9 @@
         bottom: 2rem;
         top: auto;
         width: 90%;
+        max-width: 400px;
         justify-content: center;
-        background: rgba(10, 10, 10, 0.85);
+        background: rgba(10, 10, 10, 0.9);
     }
 
     .navList {
@@ -80,9 +93,16 @@
 
     .navLink {
         padding: 0.75rem;
+        flex-direction: column;
+        gap: 0.25rem;
     }
 
     .linkText {
-        display: none;
+        font-size: 0.7rem;
+    }
+
+    .iconWrapper svg {
+        width: 20px;
+        height: 20px;
     }
 }

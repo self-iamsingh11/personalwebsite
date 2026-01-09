@@ -2,6 +2,7 @@
     height: 100vh;
     width: 100%;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     position: relative;
@@ -11,31 +12,110 @@
 .content {
     text-align: center;
     z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 0 2rem;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-full);
+    margin-bottom: 1rem;
+}
+
+.badgeText {
+    font-size: 0.85rem;
+    color: var(--accent-secondary);
+    font-weight: 500;
 }
 
 .title {
     font-family: var(--font-display);
-    font-size: 8rem;
-    line-height: 0.9;
+    font-size: clamp(3rem, 10vw, 6rem);
+    line-height: 1;
     font-weight: 800;
-    text-transform: uppercase;
-    margin-bottom: 2rem;
-    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.03em;
 }
 
 .subtitle {
-    font-size: 1.5rem;
+    font-size: clamp(1.1rem, 3vw, 1.5rem);
     color: var(--text-secondary);
     font-weight: 300;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.01em;
+    max-width: 600px;
+}
+
+.subtitle strong {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.valueProposition {
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    color: var(--text-secondary);
+    line-height: 1.7;
+    max-width: 500px;
+    margin-top: 0.5rem;
+}
+
+.ctaGroup {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.scrollIndicator {
+    position: absolute;
+    bottom: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: var(--radius-full);
+    transition: color var(--duration-normal) var(--easing-smooth);
+}
+
+.scrollIndicator:hover {
+    color: var(--text-primary);
 }
 
 @media (max-width: 768px) {
-    .title {
-        font-size: 4rem;
+    .content {
+        padding: 0 1rem;
     }
 
-    .subtitle {
-        font-size: 1rem;
+    .ctaGroup {
+        flex-direction: column;
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .valueProposition {
+        display: none;
+    }
+
+    .scrollIndicator {
+        bottom: 6rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .badge {
+        padding: 0.4rem 0.8rem;
+    }
+
+    .badgeText {
+        font-size: 0.75rem;
     }
 }
