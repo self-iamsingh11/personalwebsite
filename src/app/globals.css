@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
 
 :root {
   /* Premium Dark Theme Palette */
@@ -128,7 +128,8 @@ a {
 }
 
 /* Code styling */
-code, pre {
+code,
+pre {
   font-family: var(--font-mono);
 }
 
@@ -148,6 +149,7 @@ code, pre {
 
 /* Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {
